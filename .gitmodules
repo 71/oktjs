@@ -1,0 +1,3 @@
+[submodule "open-korean-text"]
+	path = open-korean-text
+	url = git@github.com:open-korean-text/open-korean-text.git
