@@ -1,11 +1,17 @@
 # oktjs
 
+<a href="https://www.npmjs.com/package/oktjs" alt="npm">
+  <img src="https://img.shields.io/npm/v/oktjs" />
+</a>
+
 Port of [Open Korean Text](https://github.com/open-korean-text/open-korean-text)
 to JavaScript; it has no external dependencies, and runs in the browser.
 
 Note that a modern browser with support for
 [ES2018 RegExp unicode escapes](https://caniuse.com/mdn-javascript_builtins_regexp_property_escapes)
 is [necessary](https://www.scala-js.org/doc/regular-expressions.html).
+
+[Try it online](https://observablehq.com/@71/korean-nlp)!
 
 ## Building
 
