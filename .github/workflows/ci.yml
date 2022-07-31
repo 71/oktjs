@@ -37,6 +37,7 @@ jobs:
 
       - name: Create tag based on package.json
         uses: butlerlogic/action-autotag@ade8d2e19bfcd1e6a91272e2849b4bf4c37a67f1
+        if: ${{ github.event_name == 'push' }}
         id: autotag
         with:
           tag_prefix: v
@@ -45,6 +46,6 @@ jobs:
 
       - name: Publish to NPM
         run: yarn publish
-        if: ${{ success() && steps.autotag.outputs.tagcreated == 'yes' }}
+        if: ${{ steps.autotag.outputs.tagcreated == 'yes' }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
