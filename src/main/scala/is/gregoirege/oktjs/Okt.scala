@@ -51,9 +51,9 @@ object Okt extends js.Object {
   def tokenize(text: String): js.Array[KoreanToken] =
     OpenKoreanTextProcessor.tokenize(text).map(new KoreanToken(_)).toJSArray
 
-  def tokenizeTopN(text: String, n: Int): js.Array[js.Array[KoreanToken]] =
+  def tokenizeTopN(text: String, n: Int): js.Array[js.Array[js.Array[KoreanToken]]] =
     OpenKoreanTextProcessor.tokenizeTopN(text, n)
-      .map(x => KoreanStemmer.stem(x.head).map(new KoreanToken(_)).toJSArray)
+      .map(_.map(KoreanStemmer.stem(_).map(new KoreanToken(_)).toJSArray).toJSArray)
       .toJSArray
 
   def detokenize(tokens: js.Iterable[String]): String =
