@@ -1,5 +1,6 @@
 /.bsp/
-node_modules/
-target/
-index.js
-resources.json.gz
+/node_modules/
+/target/
+/index.js
+/resources.json.gz
+/project/

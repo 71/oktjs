@@ -1,8 +1,9 @@
 {
   "name": "oktjs",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Open Korean Text ported to JavaScript.",
-  "main": "index.js",
+  "main": "./index.js",
+  "types": "./index.d.ts",
   "type": "module",
   "repository": "https://github.com/71/oktjs.git",
   "author": "opensource@gregoirege.is",
@@ -10,13 +11,14 @@
   "scripts": {
     "build:resources": "node resources.json.gz.build.js",
     "build:scala": "sbt fullLinkJS",
-    "build:lib": "esbuild index.ts --outfile=index.js --format=esm --bundle --minify --loader:.gz=binary --inject:./resources.js",
+    "build:lib": "esbuild src/index.js --outfile=index.js --format=esm --bundle --minify --loader:.gz=binary --inject:./resources.js",
     "build": "yarn build:resources && yarn build:scala && yarn build:lib",
     "test": "node example.js"
   },
   "devDependencies": {
     "@types/node": "^18.6.1",
     "esbuild": "^0.14.50",
-    "fflate": "^0.7.3"
+    "fflate": "^0.7.3",
+    "typescript": "^5.2.2"
   }
 }
